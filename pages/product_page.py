@@ -4,7 +4,7 @@ from pages.locators import ProductPageLocators
 
 class ProductPage(BasePage):
     def add_to_cart_button(self):
-        add_to_cart_btn = self.browser.find_element(*ProductPageLocators.ADD_TO_CART)
+        add_to_cart_btn = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET)
         add_to_cart_btn.click()
     def correct_product_name_in_message(self):
         assert self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text == self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_MESSAGE).text
