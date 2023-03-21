@@ -7,6 +7,7 @@ def pytest_addoption(parser):
     parser.addoption('--language', action='store', default='en',
                      help='Choose language en/es/ru(etc)')
 
+
 @pytest.fixture()
 def browser(request):
     user_language = request.config.getoption("language")
@@ -15,4 +16,3 @@ def browser(request):
     browser = webdriver.Chrome(options=options)
     yield browser
     browser.quit()
-
